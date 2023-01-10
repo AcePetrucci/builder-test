@@ -17,9 +17,7 @@ const fetchWeather = async (zip: string) => {
   return weather;
 };
 
-export const WeatherByZipPage = async ({
-  params: { zip },
-}: WeatherByZipPageProps) => {
+const WeatherByZipPage = async ({ params: { zip } }: WeatherByZipPageProps) => {
   if (zip.length !== 5) throw new Error();
 
   const weather = await fetchWeather(zip);
