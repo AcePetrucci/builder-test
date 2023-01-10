@@ -4,7 +4,7 @@ import type { WeatherByZipPageProps } from './props';
 import { WeatherByZip } from './WeatherByZip';
 
 const fetchWeather = async (zip: string) => {
-  const APIKey = '9902055c7bb8ad3fee74b615184caaac';
+  const APIKey = process.env.OW_KEY;
 
   const { lat, lon }: ZipToLocation = await fetch(
     `http://api.openweathermap.org/geo/1.0/zip?zip=${zip}&appid=${APIKey}`
